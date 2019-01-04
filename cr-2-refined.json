@@ -1,0 +1,42 @@
+{
+  "Data": {
+    "AttributeFeature": {
+      "ID": { "type": "Key", "include": false },
+      "POSTALCODE": { "type": "Categorical", "include": true },
+      "GENDER": { "type": "Categorical", "include": true },
+      "START_DATE": { "type": "DateTime", "include": false },
+      "END_DATE": { "type": "DateTime", "include": false },
+      "CUTOFF_DATE": { "type": "DateTime", "include": false },
+      "YEAR": { "type": "Categorical", "include": false },
+      "CHURN": {"type": "Label", "include": true }
+    },
+    "SequenceFeature": {
+      "IA_TYPE": { "type": "Categorical", "include": true },
+      "IA_TIMESTAMP": { "type": "DateTime", "include": true },
+      "IA_STATUS": { "type": "Categorical", "include": false },
+      "IA_REASON": { "type": "Categorical", "include": false },
+      "IA_AMOUNT": { "type": "Numeric", "include": false },
+      "IA_CURRENCY": { "type": "Categorical", "include": false }
+    }
+  },
+  "Mapping": {
+	"IA_TYPE": "IA_TYPE",
+    "LABEL": "CHURN",
+    "YEAR": "YEAR",
+    "IA_TIMESTAMP": "IA_TIMESTAMP",
+    "START_DATE": "START_DATE",
+    "END_DATE": "END_DATE",
+    "CUTOFF_DATE": "CUTOFF_DATE",
+	"TIMESTAMP_PATTERN": "%Y-%m-%d %H:%M:%S"
+  },
+  "Parameter": {
+    "TestRatio": 0.2,
+    "ValidRatio": 0.1,
+    "PredictiveScenario": "TESTSCENARIO",
+    "NumTrees": 100,
+    "MaxDepth": 3,
+    "MinSampleSplit": 2,
+    "RandomState": 255,
+    "MaxFeature":"auto"
+  }
+}
